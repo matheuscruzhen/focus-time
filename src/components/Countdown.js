@@ -21,10 +21,13 @@ export const Countdown = ({ minutes = 20, isPaused }) => {
   };
 
   useEffect(() => {
+    if (isPaused) {
+      return;
+    }
     interval.current = setInterval(countDown, 1000);
 
     return () => clearInterval(interval.current);
-  }, []);
+  }, [isPaused]);
 
   const [millis, setMillis] = useState(minutesToMillis(minutes));
   const minute = Math.floor((millis / 1000 / 60) % 60);

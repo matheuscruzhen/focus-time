@@ -1,6 +1,7 @@
-import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 import { StyleSheet, Text, View, Platform } from "react-native";
+
+import { Countdown } from "./src/components/Countdown";
 import { Focus } from "./src/features/focus/Focus";
 import { Timer } from "./src/features/timer/Timer";
 import { colors } from "./src/utils/colors";
@@ -11,7 +12,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      {/* <StatusBar style="auto" /> */}
+      <Countdown />
       {focusSubject ? (
         <Timer focusSubject={focusSubject} />
       ) : (

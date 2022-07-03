@@ -12,7 +12,9 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Countdown />
+      <View style={styles.countdown}>
+        <Countdown />
+      </View>
       {focusSubject ? (
         <Timer focusSubject={focusSubject} />
       ) : (
@@ -28,5 +30,10 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: Platform.OS === "ios" ? spacing.md : spacing.lg,
     backgroundColor: colors.darkBlue,
+  },
+  countdown: {
+    flex: 0.5,
+    alignItems: "center",
+    justifyContent: "center",
   },
 });

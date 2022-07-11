@@ -20,7 +20,9 @@ export default function App() {
     setFocusHistory([...focusHistory, { subject, status }]);
   };
 
-  const onClear = () => {};
+  const onClear = () => {
+    setFocusHistory([]);
+  };
 
   return (
     <View style={styles.container}>

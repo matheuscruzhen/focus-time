@@ -5,8 +5,11 @@ import { fontSizes, spacing } from "../../utils/sizes";
 import { RoundedButton } from "../../components/RoundedButton";
 
 const HistoryItem = ({ item, index }) => {
-  console.log(item);
-  return <Text style={styles.historyItem(item.status)}>{item.subject}</Text>;
+  return (
+    <Text key={item.key} style={styles.historyItem(item.status)}>
+      {item.subject}
+    </Text>
+  );
 };
 
 export const FocusHistory = ({ focusHistory, onClear }) => {
